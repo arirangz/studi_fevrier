@@ -5,7 +5,6 @@ $utilisateurs = [
    ["nom" => "Doe", "prenom" => "Jane", "age" => 31]
 ];
 
-
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,7 @@ $utilisateurs = [
         foreach ($utilisateurs as $key => $utilisateur) { ?>
             <article>
                 <h2><?=$utilisateur["nom"];?>  <?=$utilisateur["prenom"];?></h2>
-                <p>Age : <?=echo $utilisateur["age"];?> ans</p>
+                <p>Age : <?=$utilisateur["age"];?> ans</p>
             </article>
 
         <?php }
