@@ -1,3 +1,15 @@
+<?php
+
+$mainMenu = [
+    "index.php" => "Accueil",
+    "actualites.php" => "Actualités",
+    "a_propos.php" => "A propos"
+];
+
+$currentPage = basename($_SERVER["SCRIPT_NAME"]);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +33,10 @@
                 </a>
             </div>
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2">Features</a></li>
-                <li><a href="#" class="nav-link px-2">Pricing</a></li>
-                <li><a href="#" class="nav-link px-2">FAQs</a></li>
-                <li><a href="#" class="nav-link px-2">About</a></li>
+            <ul class="nav nav-pills col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <?php foreach ($mainMenu as $page => $titre) { ?>
+                    <li><a href="<?=$page ?>" class="nav-link px-2 <?php if ($page === $currentPage) { echo "active";}?>"><?=$titre ?></a></li>
+                <?php } ?>
             </ul>
 
             <div class="col-md-3 text-end">
